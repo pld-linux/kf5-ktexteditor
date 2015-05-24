@@ -1,13 +1,3 @@
-# TODO:
-# Not packaged:
-# /usr/lib/qt5/plugins/kf5/parts
-# /usr/share/katepart
-# /usr/share/katepart5/script/commands
-# /usr/share/katepart5/script/files/quickcoding/cpp
-# /usr/share/katepart5/script/indentation
-# /usr/share/katepart5/script/libraries
-# /usr/share/katepart5/script/libraries/emmet
-# /usr/share/katepart5/syntax
 %define		kdeframever	5.10
 %define		qtver		5.3.2
 %define		kfname		ktexteditor
@@ -15,7 +5,7 @@
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
 Version:	5.10.0
-Release:	0.1
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
