@@ -1,15 +1,15 @@
-%define		kdeframever	5.13
+%define		kdeframever	5.19
 %define		qtver		5.3.2
 %define		kfname		ktexteditor
 
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
-Version:	5.13.0
-Release:	2
+Version:	5.19.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	8d7b4487743292ce2a21a84867f5d519
+# Source0-md5:	165cc67fc95363ffa6e247b230965b09
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -109,9 +109,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kfname}5.lang
 %defattr(644,root,root,755)
 %doc README.md
-/etc/xdg/katemoderc
-/etc/xdg/kateschemarc
-/etc/xdg/katesyntaxhighlightingrc
+#/etc/xdg/katemoderc
+#/etc/xdg/kateschemarc
+#/etc/xdg/katesyntaxhighlightingrc
 %attr(755,root,root) %ghost %{_libdir}/libKF5TextEditor.so.5
 %attr(755,root,root) %{_libdir}/libKF5TextEditor.so.*.*
 %attr(755,root,root) %ghost %{qt5dir}/plugins/kf5/parts/katepart.so
@@ -119,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/katepart.desktop
 %{_datadir}/kservicetypes5/ktexteditor.desktop
 %{_datadir}/kservicetypes5/ktexteditorplugin.desktop
-%{_datadir}/kxmlgui5/katepart
+#%{_datadir}/kxmlgui5/katepart
 
 %files devel
 %defattr(644,root,root,755)
