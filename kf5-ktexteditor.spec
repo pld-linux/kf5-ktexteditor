@@ -123,7 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservicetypes5/ktexteditorplugin.desktop
 #%{_datadir}/kxmlgui5/katepart
 /etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
-%attr(755,root,root) %{_libdir}/kauth/kauth_ktexteditor_helper
+%attr(755,root,root) %{_libexecdir}/kauth/kauth_ktexteditor_helper
 %{_datadir}/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
 %{_datadir}/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
 %{_datadir}/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
