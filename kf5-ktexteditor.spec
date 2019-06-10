@@ -1,15 +1,15 @@
-%define		kdeframever	5.56
+%define		kdeframever	5.59
 %define		qtver		5.9.0
 %define		kfname		ktexteditor
 
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
-Version:	5.56.0
+Version:	5.59.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	82b4b54dbba12f86671461cb1224c0ce
+# Source0-md5:	1c9d404b2bd8aebe28d625aebb44d23a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -127,9 +127,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservicetypes5/ktexteditor.desktop
 %{_datadir}/kservicetypes5/ktexteditorplugin.desktop
 #%{_datadir}/kxmlgui5/katepart
-/etc/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 %attr(755,root,root) %{_libexecdir}/kauth/kauth_ktexteditor_helper
 %{_datadir}/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
+%{_datadir}/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 %{_datadir}/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
 %{_datadir}/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
 
