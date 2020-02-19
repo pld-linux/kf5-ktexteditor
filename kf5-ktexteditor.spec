@@ -24,7 +24,7 @@ BuildRequires:	Qt5XmlPatterns-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-attica-devel >= %{version}
-BuildRequires:	kf5-extra-cmake-modules >= 0.0.15
+BuildRequires:	kf5-extra-cmake-modules >= %{version}
 BuildRequires:	kf5-karchive-devel >= %{version}
 BuildRequires:	kf5-kauth-devel >= %{version}
 BuildRequires:	kf5-kbookmarks-devel >= %{version}
