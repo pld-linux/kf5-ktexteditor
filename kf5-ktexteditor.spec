@@ -1,15 +1,15 @@
-%define		kdeframever	5.79
+%define		kdeframever	5.80
 %define		qtver		5.9.0
 %define		kfname		ktexteditor
 
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
-Version:	5.79.0
+Version:	5.80.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	42d01794017416e54cabf71376d160b8
+# Source0-md5:	cb753c7671c01c2d77b41ddee827fb94
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -112,9 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kfname}5.lang
 %defattr(644,root,root,755)
 %doc README.md
-%attr(755,root,root) %ghost %{_libdir}/libKF5TextEditor.so.5
+%ghost %{_libdir}/libKF5TextEditor.so.5
 %attr(755,root,root) %{_libdir}/libKF5TextEditor.so.*.*
-%attr(755,root,root) %ghost %{qt5dir}/plugins/kf5/parts/katepart.so
+%ghost %{qt5dir}/plugins/kf5/parts/katepart.so
 %dir %{_datadir}/katepart5
 %dir %{_datadir}/katepart5/script
 %{_datadir}/katepart5/script/README.md
@@ -135,5 +135,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/KTextEditor
 %{_includedir}/KF5/ktexteditor_version.h
 %{_libdir}/cmake/KF5TextEditor
-%attr(755,root,root) %{_libdir}/libKF5TextEditor.so
+%{_libdir}/libKF5TextEditor.so
 %{qt5dir}/mkspecs/modules/qt_KTextEditor.pri
