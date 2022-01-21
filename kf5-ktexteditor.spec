@@ -5,7 +5,7 @@
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
 Version:	5.90.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -128,6 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
 %{_datadir}/qlogging-categories5/ktexteditor.categories
 %{_datadir}/qlogging-categories5/ktexteditor.renamecategories
+%dir %{_datadir}/kdevfiletemplates
 %dir %{_datadir}/kdevfiletemplates/templates
 %{_datadir}/kdevfiletemplates/templates/ktexteditor-plugin.tar.bz2
 
