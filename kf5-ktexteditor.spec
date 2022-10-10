@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.98
+%define		kdeframever	5.99
 %define		qtver		5.15.2
 %define		kfname		ktexteditor
 
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
-Version:	5.98.0
+Version:	5.99.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	8aac0b389b0bcc6414fcfc0fe2a3fc84
+# Source0-md5:	85270392eef7686c4e6dd682cd35c8df
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -137,9 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
 %{_datadir}/qlogging-categories5/ktexteditor.categories
 %{_datadir}/qlogging-categories5/ktexteditor.renamecategories
-%dir %{_datadir}/kdevfiletemplates
-%dir %{_datadir}/kdevfiletemplates/templates
-%{_datadir}/kdevfiletemplates/templates/ktexteditor-plugin.tar.bz2
+%{_datadir}/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
 
 %files devel
 %defattr(644,root,root,755)
