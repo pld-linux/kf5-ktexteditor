@@ -57,7 +57,7 @@ BuildRequires:	kf5-syntax-highlighting-devel >= %{version}
 BuildRequires:	libgit2-devel
 BuildRequires:	ninja
 BuildRequires:	perl-base
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires:	kf5-dirs
