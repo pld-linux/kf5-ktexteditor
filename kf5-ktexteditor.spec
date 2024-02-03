@@ -1,29 +1,27 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.114
+%define		kdeframever	5.249.0
 %define		qtver		5.15.2
 %define		kfname		ktexteditor
 
 Summary:	Full text editor component
 Name:		kf5-%{kfname}
-Version:	5.114.0
-Release:	1
+Version:	5.249.0
+Release:	0.1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	35c4d09a9129f8528b1ada6f0f534f51
+Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	001cd5373077133fc4cb090a54e86f78
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5DBus-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Network-devel >= %{qtver}
-BuildRequires:	Qt5PrintSupport-devel >= %{qtver}
-BuildRequires:	Qt5Script-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5Widgets-devel >= %{qtver}
-BuildRequires:	Qt5Xml-devel >= %{qtver}
-BuildRequires:	Qt5XmlPatterns-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6DBus-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Network-devel >= %{qtver}
+BuildRequires:	Qt6PrintSupport-devel >= %{qtver}
+BuildRequires:	Qt6Test-devel >= %{qtver}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
+BuildRequires:	Qt6Xml-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-attica-devel >= %{version}
@@ -63,12 +61,12 @@ BuildRequires:	xz
 Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt5dir		%{_libdir}/qt5
+%define		qt6dir		%{_libdir}/qt6
 
 %description
 KTextEditor provides a powerful text editor component that you can
 embed in your application, either as a KPart or using the
-KF5::TextEditor library (if you need more control).
+KF6::TextEditor library (if you need more control).
 
 The text editor component contains many useful features, from syntax
 highlighting and automatic indentation to advanced scripting support,
@@ -111,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_datadir}/katepart5/syntax
 
-%find_lang %{kfname}5
+%find_lang %{kfname}6
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -119,30 +117,21 @@ rm -rf $RPM_BUILD_ROOT
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f %{kfname}5.lang
+%files -f %{kfname}6.lang
 %defattr(644,root,root,755)
 %doc README.md
-%ghost %{_libdir}/libKF5TextEditor.so.5
-%attr(755,root,root) %{_libdir}/libKF5TextEditor.so.*.*
-%ghost %{qt5dir}/plugins/kf5/parts/katepart.so
-%dir %{_datadir}/katepart5
-%dir %{_datadir}/katepart5/script
-%{_datadir}/katepart5/script/README.md
-%dir %{_datadir}/katepart5/syntax
-%{_datadir}/kservices5/katepart.desktop
-%{_datadir}/kservicetypes5/ktexteditor.desktop
-%{_datadir}/kservicetypes5/ktexteditorplugin.desktop
-%attr(755,root,root) %{_libexecdir}/kauth/kauth_ktexteditor_helper
-%{_datadir}/dbus-1/system-services/org.kde.ktexteditor.katetextbuffer.service
-%{_datadir}/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
-%{_datadir}/polkit-1/actions/org.kde.ktexteditor.katetextbuffer.policy
-%{_datadir}/qlogging-categories5/ktexteditor.categories
-%{_datadir}/qlogging-categories5/ktexteditor.renamecategories
-%{_datadir}/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
+%ghost %{_libdir}/libKF6TextEditor.so.6
+%attr(755,root,root) %{_libdir}/libKF6TextEditor.so.*.*
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/parts/katepart.so
+%attr(755,root,root) %{_prefix}/libexec/kf6/kauth/kauth_ktexteditor_helper
+%{_datadir}/dbus-1/system-services/org.kde.ktexteditor6.katetextbuffer.service
+%{_datadir}/dbus-1/system.d/org.kde.ktexteditor6.katetextbuffer.conf
+%{_datadir}/kdevappwizard/templates/ktexteditor6-plugin.tar.bz2
+%{_datadir}/qlogging-categories6/ktexteditor.categories
+%{_datadir}/qlogging-categories6/ktexteditor.renamecategories
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/KTextEditor
-%{_libdir}/cmake/KF5TextEditor
-%{_libdir}/libKF5TextEditor.so
-%{qt5dir}/mkspecs/modules/qt_KTextEditor.pri
+%{_includedir}/KF6/KTextEditor
+%{_libdir}/cmake/KF6TextEditor
+%{_libdir}/libKF6TextEditor.so
